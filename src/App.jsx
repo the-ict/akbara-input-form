@@ -84,30 +84,12 @@ export default function App() {
       return;
     }
 
-    try {
-      if (!window.Telegram || !window.Telegram.WebApp) {
-        alert("Telegram WebApp yuklanmagan!");
-        return;
-      }
-
-      if (window?.Telegram?.WebApp.sendData) {
-        const data = {
-          name,
-          lastName,
-          country,
-          region,
-          districts,
-          phone: String(phone),
-        };
-
-        window?.Telegram?.WebApp.sendData(JSON.stringify(data));
-      } else {
-        alert("sendData funcksiyasi ishlamayapti!")
-      }
-
-    } catch (error) {
-      alert("Xatolik yuz berdi: " + error);
+    if(window?.Telegram?.WebApp) {
+      alert("Telegram webapp bor")
+    }else {
+      alert("WebApp emas!")
     }
+    
   };
 
 
