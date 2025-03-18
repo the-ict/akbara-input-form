@@ -89,7 +89,7 @@ export default function App() {
 
     if (query_id) {
       try {
-        const res = await axios.post("https://akbaratvbot.onrender.com/web-app", {
+        await axios.post("https://akbaratvbot.onrender.com/web-app", {
           query_id: query_id,
           name,
           lastName,
