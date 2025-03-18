@@ -20,169 +20,104 @@ export const countries = [
     "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
 ];
 
-
-
-
 export const regions = [
     {
         region: "Andijon viloyati",
         districts: [
-            "Andijon",
-            "Asaka",
-            "Baliqchi",
-            "Buloqboshi",
-            "Davlatabad",
-            "Jalaquduq",
-            "Khodjaobod",
-            "Qo'rg'ontepa",
-            "Marhamat",
-            "Paxtaobod",
-            "Xonobod"
+            "Andijon", "Xonobod", "Andijon tumani", "Asaka", "Baliqchi", 
+            "Buloqboshi", "Boʻston", "Izboskan", "Jalaquduq", "Marhamat", 
+            "Oltinkoʻl", "Paxtaobod", "Qoʻrgʻontepa", "Shahrixon", "Ulugʻnor", "Xoʻjaobod"
         ]
     },
     {
         region: "Buxoro viloyati",
         districts: [
-            "Buxoro",
-            "G'ijduvon",
-            "Kogon",
-            "Jondor",
-            "Olot",
-            "Peshku",
-            "Romitan",
-            "Shofirkon",
-            "Vobkent"
+            "Buxoro", "Kogon", "Buxoro tumani", "Gʻijduvon", "Jondor", 
+            "Kogon tumani", "Olot", "Peshku", "Qorakoʻl", "Qorovulbozor", 
+            "Romitan", "Shofirkon", "Vobkent"
         ]
     },
     {
-        region: "Farg'ona viloyati",
+        region: "Fargʻona viloyati",
         districts: [
-            "Farg'ona",
-            "Bag'dod",
-            "Buvayda",
-            "Dang'ara",
-            "Farg'ona",
-            "Koshtepa",
-            "Oltiariq",
-            "Quva",
-            "Rishton",
-            "Tashlak",
-            "Uchko'prik"
+            "Fargʻona", "Qoʻqon", "Margʻilon", "Bagʻdod", "Beshariq", 
+            "Buvayda", "Dangʻara", "Fargʻona tumani", "Furqat", "Quva", 
+            "Quvasoy", "Rishton", "Soʻx", "Toshloq", "Uchkoʻprik", "Oʻzbekiston"
         ]
     },
     {
         region: "Jizzax viloyati",
         districts: [
-            "Jizzax",
-            "Arnasoy",
-            "Bakhmal",
-            "Dustlik",
-            "G'allaorol",
-            "Forish",
-            "Zafarobod",
-            "Sharof Rashidov"
+            "Jizzax", "Arnasoy", "Baxmal", "Doʻstlik", "Forish", 
+            "Gʻallaorol", "Mirzachoʻl", "Paxtakor", "Yangiobod", "Zafarobod", 
+            "Zarbdor", "Sharof Rashidov"
         ]
     },
     {
         region: "Qashqadaryo viloyati",
         districts: [
-            "Qarshi",
-            "Chiroqchi",
-            "Dehqonobod",
-            "Koson",
-            "Kitob",
-            "Mirishkor",
-            "Muborak",
-            "Nishon",
-            "Shahrisabz",
-            "Yakkabog'"
+            "Qarshi", "Shahrisabz", "Dehqonobod", "Gʻuzor", "Kasbi", 
+            "Kitob", "Koson", "Mirishkor", "Muborak", "Nishon", "Chiroqchi", "Yakkabogʻ"
         ]
     },
     {
         region: "Navoiy viloyati",
         districts: [
-            "Navoiy",
-            "Karmana",
-            "Konimex",
-            "Nurota",
-            "Tomdi",
-            "Zafarobod"
+            "Navoiy", "Zarafshon", "Karmana", "Konimex", "Nurota", 
+            "Tomdi", "Uchquduq", "Xatirchi"
         ]
     },
     {
         region: "Namangan viloyati",
         districts: [
-            "Namangan",
-            "Chortoq",
-            "Kosonsoy",
-            "Mingbuloq",
-            "Namangan",
-            "Pop",
-            "Uychi"
+            "Namangan", "Chortoq", "Chust", "Kosonsoy", "Mingbuloq", 
+            "Namangan tumani", "Norin", "Pop", "Toʻraqoʻrgʻon", "Uychi", "Uchqoʻrgʻon", "Yangiqoʻrgʻon"
         ]
     },
     {
         region: "Samarqand viloyati",
         districts: [
-            "Samarqand",
-            "Bulung'ur",
-            "Jomboy",
-            "Kattaqo'rg'on",
-            "Payariq",
-            "Paxtachi",
-            "Samarkand",
-            "Urgut"
+            "Samarqand", "Kattaqoʻrgʻon", "Bulungʻur", "Ishtixon", "Jomboy", 
+            "Kattaqoʻrgʻon tumani", "Narpay", "Nurobod", "Oqdaryo", "Payariq", 
+            "Pastdargʻom", "Paxtachi", "Samarqand tumani", "Toyloq", "Urgut"
         ]
     },
     {
         region: "Sirdaryo viloyati",
         districts: [
-            "Guliston",
-            "Baxt",
-            "Davlatabad",
-            "Mirzaobod",
-            "Sayxunabad",
-            "Sirdaryo"
+            "Guliston", "Shirin", "Yangiyer", "Boyovut", "Guliston tumani", 
+            "Xovos", "Mirzaobod", "Oqoltin", "Sayxunobod", "Sardoba", "Sirdaryo"
         ]
     },
     {
         region: "Surxondaryo viloyati",
         districts: [
-            "Termiz",
-            "Angor",
-            "Denov",
-            "Boysun",
-            "Jarqo'rg'on",
-            "Oltinsoy",
-            "Shurchi",
-            "Muzrabot"
+            "Termiz", "Angor", "Bandixon", "Boysun", "Denov", "Jarqoʻrgʻon", 
+            "Muzrabot", "Oltinsoy", "Qiziriq", "Qumqoʻrgʻon", "Sariosiyo", "Sherobod", "Shoʻrchi"
         ]
     },
     {
         region: "Toshkent viloyati",
         districts: [
-            "Toshkent",
-            "Bekabad",
-            "Zangiota",
-            "Qibray",
-            "Chirchiq",
-            "Parkent",
-            "Yangiyo'l",
-            "Buka",
-            "Ohangaron"
+            "Nurafshon", "Bekobod", "Chirchiq", "Olmaliq", "Ohangaron", 
+            "Angren", "Yangiyoʻl", "Bekobod tumani", "Boʻka", "Chinoz", "Qibray", 
+            "Ohangaron tumani", "Oqqoʻrgʻon", "Parkent", "Piskent", "Toshkent tumani", 
+            "Yangiyoʻl tumani", "Zangiota", "Yuquri Chirchiq"
         ]
     },
     {
         region: "Xorazm viloyati",
         districts: [
-            "Urganch",
-            "Beruniy",
-            "Xiva",
-            "Shovot",
-            "Hazorasp",
-            "Qoshkupir",
-            "Yangibozor",
-            "Urgench"
+            "Urganch", "Xiva", "Pitnak", "Bogʻot", "Gurlan", "Xonqa", 
+            "Hazorasp", "Qoʻshkoʻpir", "Shovot", "Tuproqqalʼa", "Yangiariq", "Yangibozor"
+        ]
+    },
+    {
+        region: "Qoraqalpogʻiston Respublikasi",
+        districts: [
+            "Nukus", "Amudaryo", "Beruniy", "Chimboy", "Ellikqalʼa", 
+            "Kegeyli", "Moʻynoq", "Qonlikoʻl", "Qoraoʻzak", "Shumanay", "Taxtakoʻpir", 
+            "Toʻrtkoʻl", "Xoʻjayli"
         ]
     }
 ];

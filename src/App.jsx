@@ -12,6 +12,8 @@ export default function App() {
   const [country, setCountry] = useState("Uzbekistan")
   const [region, setRegion] = useState("Andijon viloyati")
   const [districts, setDistricts] = useState("")
+  const [location, setLocation] = useState("")
+  const [isActive, setIsActive] = useState(false)
 
   // Tilga moslashtirilgan matnlar
   const [labels, setLabels] = useState({});
@@ -74,6 +76,7 @@ export default function App() {
         namePlaceholder: "Ismni kiriting!",
         lastNamePlaceholder: "Familiyani kiriting",
         phonePlaceholder: "Telefon raqamingiz",
+
       });
     }
     window.Telegram.WebApp.ready()
@@ -147,7 +150,7 @@ export default function App() {
             }} />
           </div>
           <div>
-            <label>{labels.countryLabel}</label>
+            <label className="whiteLabels">{labels.countryLabel}</label>
             <select onChange={(e) => {
               setCountry(e.target.value)
             }} defaultValue="Uzbekistan">
@@ -164,7 +167,7 @@ export default function App() {
             country === "Uzbekistan" && (
               <>
                 <div>
-                  <label>{labels.regionLabel}</label>
+                  <label className="whiteLabels" style={{ color: "white" }}>{labels.regionLabel}</label>
                   <select onChange={(e) => {
                     setRegion(e.target.value)
                   }} defaultValue="Andijon viloyati">
@@ -176,7 +179,7 @@ export default function App() {
                   </select>
                 </div>
                 <div>
-                  <label>{labels.districtLabel}</label>
+                  <label style={{ color: "white" }}>{labels.districtLabel}</label>
                   <select onChange={(e) => {
                     setDistricts(e.target.value)
                   }}>
@@ -196,6 +199,12 @@ export default function App() {
               </>
             )
           }
+          <div>
+            <label className="whiteLabels" style={{ color: "white" }}>Manzil</label>
+            <input type="text" placeholder={"Manzilingizni aniq kiriting!"} onChange={(e) => {
+              setLocation(e.target.value)
+            }} />
+          </div>
           <div className='app-form__buttons'>
             <button onClick={handleCancel}>{labels.cancelButton}</button>
             <button onClick={handleSubmit}>{labels.submitButton}</button>
