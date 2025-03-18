@@ -90,8 +90,6 @@ export default function App() {
         return;
       }
 
-      alert(window?.Telegram?.WebApp)
-
       if (window?.Telegram?.WebApp.sendData) {
         const data = {
           name,
