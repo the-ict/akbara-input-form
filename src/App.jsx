@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { countries, regions } from "./country"
 import Logo from "../public/akbaraImg.jpg"
+import axios from "axios"
 import "./index.css"
 
 
@@ -78,18 +79,31 @@ export default function App() {
     window.Telegram.WebApp.ready()
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!name || !lastName || !phone || !country) {
       alert("Iltimos, barcha maydonlarni to'ldiring.");
       return;
     }
 
-    if(window?.Telegram?.WebApp) {
-      alert("Telegram webapp bor")
-    }else {
-      alert("WebApp emas!")
+    if (window?.Telegram?.WebApp) {
+      try {
+        window.Telegram.WebApp.sendData(JSON.stringify({
+          name,
+          lastName,
+          phone,
+          country,
+          region,
+          districts
+        }))
+
+        alert("Yuborildi")
+      } catch (error) {
+        alert("Xatolik yuz berdi.")
+      }
+    } else {
+      alert("Xatolik yuz berdi!")
     }
-    
+
   };
 
 
