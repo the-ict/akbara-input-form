@@ -20,7 +20,7 @@ export default function App() {
 
 
   useEffect(() => {
-    if (!country & !region & !location & !name & !lastName & !districts) {
+    if (!location & !name & !lastName) {
       setIsActive(true)
     }
   }, [location, name, lastName])
