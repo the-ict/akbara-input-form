@@ -18,6 +18,14 @@ export default function App() {
   // Tilga moslashtirilgan matnlar
   const [labels, setLabels] = useState({});
 
+
+  useEffect(() => {
+    if (!country & !region & !location & !name & !lastName & !districts) {
+      setIsActive(true)
+    }
+  }, [country, region, location, name, lastName, districts])
+
+
   useEffect(() => {
     const languageCode = window.Telegram.WebApp.initDataUnsafe.user?.language_code;
 
@@ -207,7 +215,10 @@ export default function App() {
           </div>
           <div className='app-form__buttons'>
             <button onClick={handleCancel}>{labels.cancelButton}</button>
-            <button onClick={handleSubmit}>{labels.submitButton}</button>
+            <button onClick={handleSubmit} style={{
+              opacity: isActive ? 1 : 0.6,
+              cursor: isActive ? "pointer" : "not-allowed"
+            }}>{labels.submitButton}</button>
           </div>
         </div>
       </form>
