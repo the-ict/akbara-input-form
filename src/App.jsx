@@ -85,23 +85,28 @@ export default function App() {
       return;
     }
 
-    if (window?.Telegram?.WebApp) {
+    const query_id = window?.Telegram?.WebApp.initDataUnsafe?.query_id
+
+    if (query_id) {
       try {
-        window.Telegram.WebApp.sendData(JSON.stringify({
+        const res = await axios.post("https://akbaratvbot.onrender.com/web-app", {
+          query_id: query_id,
           name,
           lastName,
           phone,
           country,
           region,
-          districts
-        }))
+          districts,
+          user_id: window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
+        })
 
-        alert("Yuborildi")
+        alert(res.data)
+
       } catch (error) {
-        alert("Xatolik yuz berdi.")
+        console.log(error)
       }
     } else {
-      alert("Xatolik yuz berdi!")
+      alert("Query Mavjud emas!")
     }
 
   };
