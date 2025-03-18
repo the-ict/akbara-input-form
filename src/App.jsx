@@ -100,7 +100,7 @@ export default function App() {
           user_id: window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
         })
 
-        alert(res.data)
+        alert("Jo'natildi !")
 
       } catch (error) {
         console.log(error)
