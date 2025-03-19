@@ -119,10 +119,8 @@ export default function App() {
           },
           body: JSON.stringify(data)
         })
-        WebApp.showAlert("Api orqali yuborildi")
       } else {
         WebApp.sendData(JSON.stringify(data))
-        WebApp.showAlert("sendData orqali yuborildi")
       }
 
     } catch (error) {
