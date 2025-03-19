@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { countries, regions } from "./country"
 import Logo from "../public/akbaraImg.jpg"
-import axios from "axios"
 import "./index.css"
+
+const Telegram = window?.Telegram?.WebApp
 
 
 export default function App() {
@@ -26,6 +27,8 @@ export default function App() {
 
 
   useEffect(() => {
+    Telegram.ready()
+    
     const languageCode = window.Telegram.WebApp.initDataUnsafe.user?.language_code;
 
     if (languageCode === "uz") {
@@ -86,7 +89,6 @@ export default function App() {
 
       });
     }
-    window.Telegram.WebApp.ready()
   }, []);
 
   const handleSubmit = async () => {
@@ -95,8 +97,7 @@ export default function App() {
       return;
     }
 
-    const query_id = window?.Telegram?.WebApp.initDataUnsafe?.query_id
-    const user_id = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
+
 
     if (query_id & user_id) alert(query_id, user_id)
     else alert("Query id va userId mavjud emas!")
@@ -105,16 +106,13 @@ export default function App() {
 
 
   const handleCancel = () => {
-    window.Telegram.WebApp.close()
+    Telegram.close()
   }
 
   return (
     <div className='app'>
       <form className='app-form' onSubmit={(e) => {
         e.preventDefault()
-      }} style={{
-        backgroundColor: window.Telegram.WebApp.themeParams.bg_color && window.Telegram.WebApp.themeParams.bg_color,
-        color: window.Telegram.WebApp.themeParams.text_color && window.Telegram.WebApp.themeParams.text_color
       }}>
         <div className='app-form__content'>
           <a href="/">
