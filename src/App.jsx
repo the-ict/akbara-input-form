@@ -118,7 +118,8 @@ export default function App() {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data)
-        })
+        }).then(() => WebApp.close())
+          .catch(err => alert("Yuborishda xatolik yuz berdi"))
       } else {
         WebApp.sendData(JSON.stringify(data))
       }
