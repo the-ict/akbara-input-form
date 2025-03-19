@@ -109,6 +109,9 @@ export default function App() {
         data.region = region
       }
 
+      WebApp.sendData(JSON.stringify(data))
+      WebApp.showAlert("Yuborildi !")
+
     } catch (error) {
       alert(error)
     }
