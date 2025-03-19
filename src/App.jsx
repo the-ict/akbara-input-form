@@ -15,7 +15,6 @@ export default function App() {
   const [location, setLocation] = useState("")
   const [isActive, setIsActive] = useState(false)
 
-  // Tilga moslashtirilgan matnlar
   const [labels, setLabels] = useState({});
 
 
@@ -97,28 +96,10 @@ export default function App() {
     }
 
     const query_id = window?.Telegram?.WebApp.initDataUnsafe?.query_id
+    const user_id = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
 
-    if (query_id) {
-      try {
-        await axios.post("https://akbaratvbot.onrender.com/web-app", {
-          query_id: query_id,
-          name,
-          lastName,
-          phone,
-          country,
-          region,
-          districts,
-          user_id: window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
-        })
-
-        alert("Jo'natildi !")
-
-      } catch (error) {
-        console.log(error)
-      }
-    } else {
-      alert("Query Mavjud emas!")
-    }
+    if (query_id & user_id) alert(query_id, user_id)
+    else alert("Query id va userId mavjud emas!")
 
   };
 
