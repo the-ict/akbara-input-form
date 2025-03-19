@@ -14,6 +14,7 @@ export default function App() {
   const [districts, setDistricts] = useState("")
   const [location, setLocation] = useState("")
   const [isActive, setIsActive] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const [labels, setLabels] = useState({});
 
@@ -91,10 +92,13 @@ export default function App() {
   }, []);
 
   const handleSubmit = async () => {
+    setLoading(true)
+
     if (!name || !lastName || !phone || !country) {
       WebApp.showAlert("Iltimos malumotlarni kiriting!")
       return;
     }
+
 
     try {
       let data = {
@@ -118,13 +122,21 @@ export default function App() {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data)
-        }).then(() => WebApp.close())
-          .catch(err => alert("Yuborishda xatolik yuz berdi"))
+        }).then(() => {
+          WebApp.close()
+          setLoading(false)
+        })
+          .catch(err => {
+            alert("Yuborishda xatolik yuz berdi")
+            setLoading(false)
+          })
       } else {
+        setLoading(false)
         WebApp.sendData(JSON.stringify(data))
       }
 
     } catch (error) {
+      setLoading(false)
       alert(error)
     }
 
@@ -223,7 +235,13 @@ export default function App() {
             <button onClick={handleSubmit} style={{
               opacity: isActive ? 1 : 0.6,
               cursor: isActive ? "pointer" : "not-allowed"
-            }}>{labels.submitButton}</button>
+            }}>{
+                loading ? (
+                  <div className='loader'></div>
+                ) : (
+                  <p>{labels.submitButton}</p>
+                )
+              }</button>
           </div>
         </div>
       </form>
