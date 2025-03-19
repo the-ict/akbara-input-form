@@ -28,7 +28,7 @@ export default function App() {
 
   useEffect(() => {
     Telegram.ready()
-    
+
     const languageCode = window.Telegram.WebApp.initDataUnsafe.user?.language_code;
 
     if (languageCode === "uz") {
