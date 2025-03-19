@@ -108,10 +108,20 @@ export default function App() {
         data.disticts = districts
         data.region = region
       }
-      WebApp.showAlert(WebApp.initDataUnsafe.query_id)
 
-      WebApp.sendData(JSON.stringify(data))
-      WebApp.showAlert("Yuborildi !")
+      if (WebApp.initDataUnsafe.query_id && WebApp.initDataUnsafe.user.id) {
+        await fetch("https://akbaratvbot.onrender.com/api/user/web-app", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+        WebApp.showAlert("Api orqali yuborildi")
+      }else {
+        WebApp.sendData(JSON.stringify(data))
+        WebApp.showAlert("sendData orqali yuborildi")
+      }
 
     } catch (error) {
       alert(error)
