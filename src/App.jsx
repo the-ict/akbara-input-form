@@ -104,7 +104,7 @@ export default function App() {
         country
       }
 
-      if (districts & region) {
+      if (districts && region) {
         data.disticts = districts
         data.region = region
       }
