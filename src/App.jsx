@@ -97,10 +97,23 @@ export default function App() {
       return;
     }
 
+    try {
+      let data = {
+        phone,
+        name,
+        lastName,
+        country
+      }
 
+      if (districts & region) {
+        data.disticts = districts
+        data.region = region
+      }
 
-    if (query_id & user_id) alert(query_id, user_id)
-    else alert("Query id va userId mavjud emas!")
+      Telegram.sendData(JSON.stringify(data))
+    } catch (error) {
+      alert(error)
+    }
 
   };
 
