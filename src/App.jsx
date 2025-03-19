@@ -11,7 +11,7 @@ export default function App() {
   const [phone, setPhone] = useState(0)
   const [country, setCountry] = useState("Uzbekistan")
   const [region, setRegion] = useState("Andijon viloyati")
-  const [districts, setDistricts] = useState("")
+  const [districts, setDistricts] = useState("Andijon")
   const [location, setLocation] = useState("")
   const [isActive, setIsActive] = useState(false)
   const [loading, setLoading] = useState(false)
