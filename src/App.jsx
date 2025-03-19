@@ -110,6 +110,8 @@ export default function App() {
       }
 
       if (WebApp.initDataUnsafe.query_id && WebApp.initDataUnsafe.user.id) {
+        data.query_id = WebApp.initDataUnsafe.query_id;
+        data.user_id = WebApp.initDataUnsafe.user.id
         await fetch("https://akbaratvbot.onrender.com/api/user/web-app", {
           method: "POST",
           headers: {
@@ -118,7 +120,7 @@ export default function App() {
           body: JSON.stringify(data)
         })
         WebApp.showAlert("Api orqali yuborildi")
-      }else {
+      } else {
         WebApp.sendData(JSON.stringify(data))
         WebApp.showAlert("sendData orqali yuborildi")
       }
