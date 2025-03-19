@@ -108,6 +108,7 @@ export default function App() {
         data.disticts = districts
         data.region = region
       }
+      WebApp.showAlert(WebApp.initDataUnsafe.user.username)
 
       WebApp.sendData(JSON.stringify(data))
       WebApp.showAlert("Yuborildi !")
