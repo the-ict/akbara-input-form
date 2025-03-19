@@ -127,8 +127,8 @@
     width: fit-content;
     font-weight: bold;
     font-family: monospace;
-    font-size: 14px;
-    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #000 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
+    font-size: 12px;
+    background: linear-gradient(135deg, #fff calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
     animation: l22 2s infinite;
 }
 
