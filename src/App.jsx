@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { countries, regions } from "./country"
 import Logo from "../public/akbaraImg.jpg"
+import WebApp from "@twa-dev/sdk"
 import "./index.css"
-
-const Telegram = window?.Telegram?.WebApp
 
 
 export default function App() {
@@ -27,7 +26,7 @@ export default function App() {
 
 
   useEffect(() => {
-    Telegram.ready()
+    WebApp.ready()
 
     const languageCode = window.Telegram.WebApp.initDataUnsafe.user?.language_code;
 
@@ -93,7 +92,7 @@ export default function App() {
 
   const handleSubmit = async () => {
     if (!name || !lastName || !phone || !country) {
-      alert("Iltimos, barcha maydonlarni to'ldiring.");
+      WebApp.showAlert("Iltimos malumotlarni kiriting!")
       return;
     }
 
@@ -110,7 +109,6 @@ export default function App() {
         data.region = region
       }
 
-      Telegram.sendData(JSON.stringify(data))
     } catch (error) {
       alert(error)
     }
@@ -119,7 +117,7 @@ export default function App() {
 
 
   const handleCancel = () => {
-    Telegram.close()
+    WebApp.close()
   }
 
   return (
