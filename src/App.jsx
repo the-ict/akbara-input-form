@@ -237,7 +237,7 @@ export default function App() {
               cursor: isActive ? "pointer" : "not-allowed"
             }}>{
                 loading ? (
-                  <div className='loader'></div>
+                  <p className="loader"></p>
                 ) : (
                   <p>{labels.submitButton}</p>
                 )
