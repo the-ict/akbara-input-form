@@ -99,7 +99,9 @@ export default function App() {
           await fetch(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
             .then(res => res.json())
             .then(res => {
-              alert(res.user.name)
+              if (res.user.name) {
+                WebApp.close()
+              }
             })
 
         } catch (error) {
