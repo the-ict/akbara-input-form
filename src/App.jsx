@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { countries, regions } from "./country"
 import Logo from "../public/akbaraImg.jpg"
 import WebApp from "@twa-dev/sdk"
+import axios from "axios"
 import "./index.css"
 
 
@@ -58,6 +59,7 @@ export default function App() {
         namePlaceholder: "Enter your first name!",
         lastNamePlaceholder: "Enter your last name",
         phonePlaceholder: "Enter your phone number",
+        logged: "You already loggedin"
       });
     } else if (languageCode === "ru") {
       setLabels({
@@ -72,6 +74,7 @@ export default function App() {
         namePlaceholder: "Введите ваше имя!",
         lastNamePlaceholder: "Введите вашу фамилию",
         phonePlaceholder: "Введите ваш номер телефона",
+        logged: "Вы уже зарегистрированы!"
       });
     } else {
       setLabels({
@@ -86,9 +89,26 @@ export default function App() {
         namePlaceholder: "Ismni kiriting!",
         lastNamePlaceholder: "Familiyani kiriting",
         phonePlaceholder: "Telefon raqamingiz",
-
+        logged: "Siz allaqachon ro'yhatdan o'tgansiz"
       });
     }
+
+
+    const isLoggedIn = async () => {
+      try {
+        if (WebApp.initDataUnsafe.user.id) {
+          const res = await axios.get(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
+          if (res.data) {
+            WebApp.showAlert(labels.logged)
+            WebApp.close()
+          }
+        }
+      } catch (error) {
+        alert("Xatolik yuz berdi.")
+      }
+    }
+
+    isLoggedIn()
   }, []);
 
   const handleSubmit = async () => {
