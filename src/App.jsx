@@ -96,11 +96,12 @@ export default function App() {
     const isLoggedIn = async () => {
       if (WebApp.initDataUnsafe.user.id) {
         try {
-          const res = await fetch(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
-          if (res.data) {
-            WebApp.showAlert(labels.logged)
-            WebApp.close()
-          }
+          await fetch(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
+            .then(res => res.json())
+            .then(res => {
+              alert(res.user.name)
+            })
+
         } catch (error) {
           alert(`Xatolik yuz berdi. ${WebApp.initDataUnsafe.user.id}`)
         }
