@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { countries, regions } from "./country"
 import Logo from "../public/akbaraImg.jpg"
 import WebApp from "@twa-dev/sdk"
-import axios from "axios"
 import "./index.css"
 
 
@@ -97,7 +96,7 @@ export default function App() {
     const isLoggedIn = async () => {
       if (WebApp.initDataUnsafe.user.id) {
         try {
-          const res = await axios.get(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
+          const res = await fetch(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
           if (res.data) {
             WebApp.showAlert(labels.logged)
             WebApp.close()
