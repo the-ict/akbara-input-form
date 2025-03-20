@@ -95,16 +95,16 @@ export default function App() {
 
 
     const isLoggedIn = async () => {
-      try {
-        if (WebApp.initDataUnsafe.user.id) {
+      if (WebApp.initDataUnsafe.user.id) {
+        try {
           const res = await axios.get(`https://akbaratvbot.onrender.com/api/user/${WebApp.initDataUnsafe.user.id}`)
           if (res.data) {
             WebApp.showAlert(labels.logged)
             WebApp.close()
           }
+        } catch (error) {
+          alert(`Xatolik yuz berdi. ${WebApp.initDataUnsafe.user.id}`)
         }
-      } catch (error) {
-        alert("Xatolik yuz berdi.")
       }
     }
 
