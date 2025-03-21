@@ -115,7 +115,6 @@ export default function App() {
   }, []);
 
   const handleSubmit = async () => {
-    setLoading(true)
 
     if (!name || !lastName || !phone || !country) {
       WebApp.showAlert("Iltimos malumotlarni kiriting!")
@@ -124,6 +123,7 @@ export default function App() {
 
 
     try {
+      setLoading(true)
       let data = {
         phone,
         name,
