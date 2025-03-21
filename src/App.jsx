@@ -103,9 +103,10 @@ export default function App() {
                 WebApp.close()
               }
             })
+            .catch(err => console.log(err))
 
         } catch (error) {
-          alert(`Xatolik yuz berdi. ${WebApp.initDataUnsafe.user.id}`)
+          alert(`Xatolik yuz berdi. ${error.message}`)
         }
       }
     }
