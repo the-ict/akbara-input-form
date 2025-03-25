@@ -121,6 +121,11 @@ export default function App() {
       return;
     }
 
+    if (country.toLowerCase() == "uzbekistan" && !region || !districts) {
+      WebApp.showAlert("Iltimos to'liq malumotni kiriting !")
+      return
+    }
+
 
     try {
       setLoading(true)
@@ -128,13 +133,19 @@ export default function App() {
         phone,
         name,
         lastName,
-        country
+        country,
+        districts: "",
+        region: ""
       }
 
-      if (districts && region) {
-        data.disticts = districts
+      if (region.trim() !== "") {
         data.region = region
       }
+
+      if (districts.trim() !== "") {
+        data.districts = districts
+      }
+
 
       if (WebApp.initDataUnsafe.query_id && WebApp.initDataUnsafe.user.id) {
         data.query_id = WebApp.initDataUnsafe.query_id;
